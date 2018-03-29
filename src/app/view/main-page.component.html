@@ -1,0 +1,55 @@
+<div id="error" *ngIf="isError">
+    <h1>Oj!</h1>
+    <p>Men det är inte du, det är jag
+        <br/>Så låt oss ge det ett till försök</p>
+    <button mat-button (click)="errorFetch()">Hämta filmerna - igen...</button>
+</div>
+
+<div class="container">
+    <div id="nav">
+        <div id="nav-top">
+            <div>
+                <mat-form-field>
+                    <mat-select [(value)]="selectedCategory" (selectionChange)="changeGenre()">
+                        <mat-option *ngFor="let val of category" value="{{val.name}}">{{val.name}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="list">
+                <button mat-fab [disabled]="true">
+                    <mat-icon>whatshot</mat-icon>
+                </button>
+                <button mat-fab>
+                    <mat-icon>today</mat-icon>
+                </button>
+                <button mat-fab>
+                    <mat-icon>new_releases</mat-icon>
+                </button>
+                <button mat-fab>
+                    <mat-icon>thumbs_up_down</mat-icon>
+                </button>
+                <button mat-fab>
+                    <mat-icon>sort_by_alpha</mat-icon>
+                </button>
+            </div>
+        </div>
+
+        <div id="view-sort">
+            <button mat-icon-button [disabled]="true">
+                <mat-icon aria-label="View as grid">view_module</mat-icon>
+            </button>
+            <button mat-icon-button (click)="showMovie(0)">
+                <mat-icon aria-label="View as carousel">view_carousel</mat-icon>
+            </button>
+        </div>
+    </div>
+
+    <list [data]="data" infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="50" (scrolled)="onScroll()"></list>
+
+    <mat-progress-bar *ngIf="moviesService.isLoading" mode="buffer"></mat-progress-bar>
+
+</div>
+
+<button *ngIf="showScrollToTop()" mat-icon-button id="arrow-up-button" (click)="scrollTop()">
+    <mat-icon>keyboard_arrow_up</mat-icon>
+</button>

@@ -1,0 +1,7 @@
+<div class="container" *ngIf="data">
+    <div class="item" *ngFor="let val of items; let i = index" (click)="showMovie(i, val.path)">
+        <div class="image">
+            <img src="{{val.images.packshot}}">
+        </div>
+    </div>
+</div>

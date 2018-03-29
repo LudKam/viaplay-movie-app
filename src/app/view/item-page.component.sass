@@ -1,0 +1,224 @@
+@import "../../_variables"
+
+$font-tiny: 0.9rem
+$font-small: 1.1rem
+$font-medium: 1.4rem
+
+[hidden]
+    display: none !important
+
+#container
+    position: fixed
+    overflow: hidden
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    z-index: 99
+    display: flex
+    justify-content: center
+    align-items: center
+    
+    #card
+        position: relative
+        display: flex
+        flex-direction: row
+        background-color: $primary-dark
+        +box-shadow-big()
+        border-radius: 1em
+        height: 90%
+        width: 85%
+        overflow: hidden
+        z-index: 2
+        @include for-desktop-up
+            height: 80%
+        @include for-phone-only
+            flex-direction: column
+
+        #left, #right
+            height: 100%
+
+        #left
+            background-color: $primary-dark
+            width: 60%
+            overflow: hidden
+            display: flex
+            align-items: flex-end
+            +transition(0.5s)
+            @include for-phone-only
+                width: 100%
+
+            #left-container
+                padding: 15% 0 10% 10%
+                @include for-phone-only
+                    padding: 0 5% 5% 5%
+                    z-index: 5
+
+            h2
+                font-size: 3.6rem
+                color: $primary-text
+                @include for-phone-only
+                    font-size: 2.4rem
+
+            #actor
+                text-transform: uppercase
+                font-weight: bold
+                font-size: $font-small
+                color: $primary-text
+                letter-spacing: 0.05rem
+                @include for-phone-only
+                    font-size: $font-tiny
+
+            #synopsis
+                color: $secondary-text
+                margin-top: 3rem
+                font-size: $font-medium
+                @include for-phone-only
+                    margin-top: 2rem
+                    margin-bottom: 3rem
+                @include for-desktop-up
+                    font-size: 1.8rem
+                p
+                    line-height: 2.2rem
+                    letter-spacing: 0.8rem
+
+            #info
+                font-size: $font-small
+                color: $primary-text
+                letter-spacing: 0.25rem
+                @include for-phone-only
+                    font-size: $font-tiny
+
+            li.genre
+                $border-radius: 2rem
+
+                border-radius: $border-radius
+                padding: 0.1rem
+                margin-right: 1rem
+                margin-bottom: 2rem
+                font-size: $font-small
+                color: $secondary-text
+                list-style: none
+                display: inline-block
+                text-transform: uppercase
+                font-weight: lighter
+                @include for-phone-only
+                    font-size: $font-tiny
+                p
+                    padding: 0.5rem 1rem 0.5rem 1rem
+                    border-radius: $border-radius
+                    background-color: $primary-dark
+                    @include for-phone-only
+                        padding: 0.5rem 0.5rem 0.5rem
+
+            #back-top
+                margin-bottom: 4rem
+                margin-left: -1.2rem
+                color: $secondary-dark
+                @include for-phone-only
+                    margin-bottom: 2rem
+
+            #button-list
+                margin-top: 3.5rem
+                display: flex
+                flex-direction: row
+                @include for-phone-only
+                    display: none
+                button
+                    margin-right: 2rem
+                #next-button#container:hover ~ #card-right
+                    right: 3%
+                    opacity: 0.9  
+
+        #right:hover
+            width: 150%
+            @include for-phone-only
+                width: 100%
+        #right
+            width: 40%
+            background-size: cover !important
+            background-repeat: no-repeat !important
+            background-position-x: center !important
+            background-position-y: center !important
+            +transition(0.5s)
+            display: block
+            @include for-phone-only
+                width: 100%
+                height: 30%
+                position: absolute
+                top: 0
+
+            img
+                height: 100%
+                width: 100%
+
+            #slanted
+                width: 0
+                height: 0
+                border-bottom: 100vh solid transparent
+                border-left: 15vw solid $primary-dark
+                @include for-phone-only
+                    border-bottom: 7rem solid $primary-dark
+                    border-right: 90vw solid transparent
+                    border-left: none
+                    position: absolute
+                    bottom: 0
+
+    %card
+        position: absolute
+        background-color: $primary-dark
+        +box-shadow-big()
+        border-radius: 1em
+        +transition(0.5s)
+    %card-1
+        @extend %card
+        opacity: 0.7
+        z-index: 1
+        height: 70%
+        width: 70%
+        cursor: pointer
+    %card-2
+        @extend %card
+        opacity: 0.4
+        height: 63%
+        width: 63%
+
+    $card-margin: 5%
+    $card2-margin: 3%
+
+
+    #card-left:hover
+        //transform: translateX(- ($card-margin - 2%))
+        left: 3%
+        opacity: 0.9
+    #card-right:hover
+        right: 3%
+        opacity: 0.9
+    #card-left
+        @extend %card-1
+        left: $card-margin
+    #card-left-2
+        @extend %card-2
+        left: $card2-margin
+
+    #card-right
+        @extend %card-1
+        right: $card-margin
+    #card-right-2
+        @extend %card-2
+        right: $card2-margin
+
+    #card2, #card3
+        position: absolute
+        background-color: $primary-dark
+        +box-shadow-big()
+        border-radius: 1em
+        width: 85%
+    #card2
+        z-index: 1
+        height: 70%
+        opacity: 0.7
+    #card3
+        height: 63%
+        width: 90%
+        opacity: 0.4

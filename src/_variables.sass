@@ -1,0 +1,66 @@
+$primary-dark: #212d33
+$secondary-dark: #3f5861
+
+$primary-text: #f5f6fa
+$secondary-text: #a0a0a0
+
+=box-shadow-big() 
+    box-shadow: 0 3px 5px -1px rgba(0, 0, 0, .2), 0 6px 10px 0 rgba(0, 0, 0, .14), 0 1px 18px 0 rgba(0, 0, 0, .12)
+
+=box-shadow-small()
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)
+
+=transition($time)
+    -webkit-transition: all $time ease-in
+    /* Safari and Chrome */
+    -moz-transition: all $time ease-in
+    /* Firefox */
+    -o-transition: all $time ease-in
+    /* IE 9 */
+    -ms-transition: all $time ease-in
+    /* Opera */
+    transition: all $time ease-in
+
+    -webkit-transition: all $time ease-out
+    /* Safari and Chrome */
+    -moz-transition: all $time ease-out
+    /* Firefox */
+    -o-transition: all $time ease-out
+    /* IE 9 */
+    -ms-transition: all $time ease-out
+    /* Opera */
+    transition: all $time ease-out
+
+=scale($size)
+    -webkit-transform: scale($size)
+    /* Safari and Chrome */
+    -moz-transform: scale($size)
+    /* Firefox */
+    -ms-transform: scale($size)
+    /* IE 9 */
+    -o-transform: scale($size)
+    /* Opera */
+    transform: scale($size) 
+
+=linear-gradient($color1, $color2)
+    background-image: linear-gradient(-225deg, $color1 0%, $color2 100%)
+    background-repeat: no-repeat
+    background-attachment: fixed
+
+// responsive design, courtesy to David Gilbertsson
+// https://medium.freecodecamp.org/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862
+@mixin for-phone-only
+  @media (max-width: 599px) 
+      @content
+@mixin for-tablet-portrait-up
+  @media (min-width: 600px) 
+      @content
+@mixin for-tablet-landscape-up
+  @media (min-width: 900px) 
+      @content
+@mixin for-desktop-up
+  @media (min-width: 1200px) 
+      @content
+@mixin for-big-desktop-up
+  @media (min-width: 1800px) 
+      @content

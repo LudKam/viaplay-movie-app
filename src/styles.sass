@@ -1,0 +1,127 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css"
+@import url("https://fonts.googleapis.com/css?family=Quicksand")
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons")
+@import "_variables"
+@import "_backgrounds"
+
+*
+    padding: 0
+    margin: 0
+    font-family: Quicksand
+
+// So rem will be easier to set, 2.4rem = 24px
+html
+    font-size: 62.5%
+
+// So unspecified font-sizes will be regular sized
+body
+    font-size: 137.5%
+    height: 100vh
+    width: 100%
+    +linear-gradient(#e52520, #b93189)
+
+.space
+    margin: 2rem 0 2rem 0
+
+.mat-fab.mat-accent
+    width: 40px
+    height: 40px
+    @include for-tablet-landscape-up 
+        width: 56px
+        height: 56px
+    span
+        padding: 0 
+
+#arrow-up-button
+    position: fixed  
+    z-index: 10
+    bottom: 2rem
+    right:  5%
+    color: $primary-text
+    .mat-icon
+        height: 28px
+        width: 28px
+    .material-icons
+        font-size: 28px !important
+
+#nav
+    padding-bottom: 3rem
+    position: relative
+    @include for-phone-only
+        padding-bottom: 5rem
+#nav-top
+    width: 100%
+    display: flex
+    justify-content: space-between
+    align-items: center
+    @include for-phone-only
+        align-items: flex-end
+    @include for-tablet-landscape-up
+        padding-bottom: 2rem
+    .mat-form-field
+        width: 20rem
+        @include for-tablet-landscape-up 
+            width: 25rem
+    .mat-input-container
+        .mat-select-value
+            color: $primary-text
+            font-size: 2.8rem
+            font-weight: 900
+            @include for-tablet-landscape-up 
+                font-size: 3.2rem
+        .mat-form-field-wrapper, .mat-form-field-underline
+            @include for-phone-only
+                padding-bottom: 0
+                bottom: 0
+    .mat-fab.mat-accent
+        opacity: 1
+        background-color: $primary-dark
+        color: $primary-text
+    .mat-fab:not([disabled])
+        background-color: rgba(0,0,0,0)
+    .mat-icon
+        height: 18px
+        width: 18px
+    .material-icons
+        font-size: 18px !important
+    .list
+        display: grid
+        grid-column-gap: 2rem
+        grid-template-columns: repeat(5, 1fr)
+        @include for-phone-only
+            grid-template-columns: repeat(1, 1fr)
+            grid-row-gap: 1.5rem
+
+#view-sort
+    display: flex
+    justify-content: flex-end
+    .mat-icon-button
+        color: $primary-dark
+    .mat-icon-button:not([disabled])
+        color: $primary-text
+    @include for-phone-only
+        position: absolute
+        top: 0
+
+#error
+    width: 100vw
+    height: 100%
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-direction: column
+    color: $primary-text
+    text-align: center
+    position: fixed
+    top: 0
+    left: 0
+    +linear-gradient(#e52520, #b93189)
+    z-index: 100
+    p
+        line-height: 3.4rem
+        font-size: 2.8rem
+        margin: 0 5% 5rem 5%
+    h1
+        font-size: 5rem
+        margin-bottom: 6rem
+

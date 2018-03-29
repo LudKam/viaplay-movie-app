@@ -1,0 +1,59 @@
+<div id="container">
+    <div id="card" 
+        (swipeleft)="next()" 
+        (swiperight)="previous()"
+        [@cardAnimator]="animationState"
+        (@cardAnimator.done)="resetAnimationState()" >
+        <div id="left">
+            <div id="left-container">
+                <div id="back-top">
+                    <button mat-icon-button [routerLink]="['']">
+                        <mat-icon>close</mat-icon>
+                    </button>
+                </div>
+
+                <ul>
+                    <li class="genre" *ngFor="let genre of item?.genres" 
+                        [ngClass]='getGenreColor(genre)'>
+                        <p>
+                            {{genre}}
+                        </p>
+                    </li>
+                </ul>
+
+                <h2>{{item?.title}}</h2>
+
+                <div class="space">
+                    <span id="actor" *ngFor="let actor of item?.actors">{{actor}}, </span>
+                </div>
+
+                <div class="space" id="info">
+                    <span>{{item?.duration}}</span> |
+                    <span>{{item?.year}}</span> |
+                    <span>{{item?.country}}</span>
+                </div>
+
+                <p class="space" id="synopsis">{{item?.synopsis}}</p>
+
+                <div id="button-list">
+                    <button mat-mini-fab id="next-button" (click)="previous()" 
+                        [hidden]="previousId < 0" [ngClass]='getGenreColor()'>
+                        <mat-icon>keyboard_arrow_left</mat-icon>
+                    </button>
+                    <button mat-mini-fab id="previous-button" (click)="next()"
+                        [ngClass]='getGenreColor()'>
+                        <mat-icon>keyboard_arrow_right</mat-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div id="right" [style.background]="image">
+            <div id="slanted"></div>
+        </div>
+    </div>
+    <div id="card-left" [hidden]="previousId < 0" (click)="previous()"></div>
+    <div id="card-left-2" [hidden]="previousId < 0"></div>
+    <div id="card-right" (click)="next()"></div>
+    <div id="card-right-2"></div>
+</div>

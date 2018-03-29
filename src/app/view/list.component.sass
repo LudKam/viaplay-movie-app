@@ -1,0 +1,32 @@
+@import "../../_variables"
+    
+.container
+    $gap: 3vw
+
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
+    grid-column-gap: $gap
+    grid-row-gap: $gap
+    @include for-phone-only
+        grid-template-columns: repeat(2, 1fr)
+    @include for-big-desktop-up
+        grid-template-columns: repeat(4, 1fr)
+
+    .item
+        position: relative
+        background-color: #fff
+        +box-shadow-small()
+        border-radius: 1rem
+        overflow: hidden
+        cursor: pointer
+        +transition(0.5s)
+
+        .image
+            background-color: $primary-dark
+
+            img:hover
+                +scale(1.03)
+            img
+                width: 100%
+                display: block
+                +transition(0.5s)
