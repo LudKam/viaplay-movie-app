@@ -28,7 +28,7 @@ In the `item-page` the fallback to retrieve an individual movie from the api mus
 
 The animations also need some fine tuning, and also the media-queries that probably aren’t perfect (if they can ever be). Another thing that should be changed is that the carousel element in the `item-page` must have a dynamic height. At the moment any overflowing data will be hidden since the height can’t be larger than the browser height. A good start would be to make it relative instead of fixed.
 
-And finally, the filtering buttons needs to be implemented, but that shouldn’t be that hard, some api calls.
+Some more data validation wouldn't hurt either. And finally, the filtering buttons needs to be implemented, but that shouldn’t be that hard, some api calls.
 
 ## Usage
 1. `git clone`
