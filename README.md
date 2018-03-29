@@ -3,14 +3,13 @@
 Within nine days Viaplay wanted me to implement an application that used data from their public API. This API containes every movie, series etc. that they got. The requirements where simple, present some movies in a list and some in a carousel. However, my solution contains a bit more than that. I wanted to create something that would “pop” when the user saw it. Therefore, every possible genre got a unique linear-gradient background, and also the carousel wasn’t made as a “ordinary” carousel.
 
 ## Let’s have a look
-Before I start explaining more about the structure of the app lets actually look at some screenshots, so you know what I am talking about.
+Before I start explaining more about the structure of the app lets actually look at some screenshots, so you know what I am talking about. (please note that the colors will be slightly different due to the gif quality)
 
-![alt text](https://github.com/LudKam/viaplay-movie-app/src/common/desktop.gif "Desktop")
+<img src="https://github.com/LudKam/viaplay-movie-app/blob/master/src/common/desktop.gif" width="700">
 
-![alt text](https://github.com/LudKam/viaplay-movie-app/src/common/mobile.gif "Mobile")
+<img src="https://github.com/LudKam/viaplay-movie-app/blob/master/src/common/mobile.gif" width="350">
 
-
-As seen the app is fully responsive and has some sweet animations and also infinite scrolling in both views. And the mobile version also makes use of swipes to navigate the carousel.
+As seen the app is fully responsive and has some sweet animations and also infinite scrolling in both views. And the mobile version also makes use of swipe navigation.
 
 ## Tools
 I decided to develop the website with [Angular CLI](https://github.com/angular/angular-cli) (version 1.7.3.) since I am somewhat familiar to it, and since I love TypeScript. I also decided to use Sass instead of CSS, because it is more awesome. To add touch-gesture support Hammer.js was used. For infinite scrolling, in the list view, ngx-infinite-scroll was used. Angular Material and Animation.css where also used.
