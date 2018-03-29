@@ -1,13 +1,13 @@
-# ViaplayApp
+# Viaplay movie app
 
 Within nine days Viaplay wanted me to implement an application that used data from their public API. This API containes every movie, series etc. that they got. The requirements where simple, present some movies in a list and some in a carousel. However, my solution contains a bit more than that. I wanted to create something that would “pop” when the user saw it. Therefore, every possible genre got a unique linear-gradient background, and also the carousel wasn’t made as a “ordinary” carousel.
 
 ## Let’s have a look
 Before I start explaining more about the structure of the app lets actually look at some screenshots, so you know what I am talking about.
 
-![alt text](https://github.com/LudKam/viaplay-movie-app/master/src/common/images/desktop.gif "Desktop")
+![alt text](https://github.com/LudKam/viaplay-movie-app/master/src/common/desktop.gif "Desktop")
 
-![alt text](https://github.com/LudKam/viaplay-movie-app/master/src/common/images/mobile.gif "Mobile")
+![alt text](https://github.com/LudKam/viaplay-movie-app/master/src/common/mobile.gif "Mobile")
 
 
 As seen the app is fully responsive and has some sweet animations and also infinite scrolling in both views. And the mobile version also makes use of swipes to navigate the carousel.
