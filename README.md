@@ -19,16 +19,16 @@ The app contains two views, one (`main-page`) showing a list of movies where the
 
 An important aspect for me was the routing in the app, meaning that every element in the carousel should have its own unique url. This means that I can send a link to my friend and she will see the same movie. This was achieved by using angulars routing.
 
-Since this was a rather small app, only one module was used. And since there where limited time the api calls where hardcoded into a shared model.
+Since this was a rather small app, only one module was used. And since there where limited time the api urls where hardcoded into a shared model.
 
 ## Todo
 On the `main-page` the filtering buttons needs to be implemented and the infinite scroll needs to be improved. The used library doesn’t seem to work on some devices.
 
 In the `item-page` the fallback to retrieve an individual movie from the api must be developed. At the moment if you copy a correct URL and refresh the browser you will end up at a 404 screen (fortunately that 404 page is very pretty). This is because there haven’t been fetched any movies yet. The movies are, at the moment, fetched in the `main-page` and stored in a service that is used in `item-page`. And since the `main-page` haven’t fetched any movies there isn’t a list to loop through. However the `item-page` does asks the service to retrieve more movies from the api when it realises that the list is almost empty.
 
-The animations also need some fine tuning, and also the media-queries that probably aren’t perfect (if they can ever be). Another thing that should be changed is that the carousel element in the `item-page` must have a dynamic height. At the moment any overflowing data will be hidden since the height can’t be larger than the browser height. A good start would be to make it relative instead of fixed.
+The animations also need some finetuning, and also the media-queries that probably aren’t perfect (if they can ever be). Another thing that should be changed is that the carousel element in the `item-page` must have a dynamic height. At the moment any overflowing data will be hidden since the height can’t be larger than the browser height. A good start would be to make it relative instead of fixed.
 
-Some more data validation wouldn't hurt either. And finally, the filtering buttons needs to be implemented, but that shouldn’t be that hard, some api calls.
+Some more data validation wouldn't hurt either.
 
 ## Usage
 1. `git clone`
