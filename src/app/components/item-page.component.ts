@@ -72,7 +72,9 @@ export class ItemPageComponent {
 
     /**
      * Controll what to do when the url path and the movie list path are diffrent, 
-     * and accordangly decide current, next and previous values.
+     * and accordangly decide current, next and previous values. (Will be taken away
+     * when we can fetch a specific movie from the server, the params check will then be
+     * done in the sanityCheck if statement)
      * @param params the url input
      */
     private sanityCheckParam(params: any) {
@@ -145,6 +147,6 @@ export class ItemPageComponent {
     }
 
     ngOnDestroy() {
-        this.movieItemService.currentMovie = 0;
+        this.movieItemService.currentMovie = null;
     }
 }

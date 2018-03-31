@@ -63,7 +63,7 @@ export class MoviesService {
     }
 
     public getNextPage(){
-        if(!this.isLoading){
+        if(!this.isLoadingSource.getValue()){
             if(this.url != null && this.lastPage != null && this.nextPage <= this.lastPage){
                 this.fetch();
             }
