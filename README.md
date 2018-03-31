@@ -5,9 +5,9 @@ Within nine days Viaplay wanted me to implement an application that used data fr
 ## Let’s have a look
 Before I start explaining more about the structure of the app lets actually look at some screenshots, so you know what I am talking about. (please note that the colors will be slightly different due to the gif quality)
 
-<img src="https://github.com/LudKam/viaplay-movie-app/blob/master/src/common/desktop.gif" width="700">
+<img src="https://drive.google.com/uc?export=view&id=19UiBo4Ex3H2k7UR_qTOAEvoDRlm-M00X" width="700px" />
 
-<img src="https://github.com/LudKam/viaplay-movie-app/blob/master/src/common/mobile.gif" width="350">
+<img src="https://drive.google.com/uc?export=view&id=1EPNeITKTc0badtpE3Lgp5RkO8r_Qlbr1" width="350px" />
 
 As seen the app is fully responsive and has some sweet animations and also infinite scrolling in both views. And the mobile version also makes use of swipe navigation.
 
