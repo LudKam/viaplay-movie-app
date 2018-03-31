@@ -1,6 +1,6 @@
 /**
  * Used for the animations
- * Courtesy to animation.css, https://daneden.github.io/animate.css/
+ * Courtesy to Animate.css, https://github.com/daneden/animate.css
  */
 
 import { keyframes, style } from "@angular/animations"
