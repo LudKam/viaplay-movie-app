@@ -28,7 +28,7 @@ In the `item-page` the fallback to retrieve an individual movie from the api mus
 
 The animations also need some finetuning, and also the media-queries that probably aren’t perfect (if they can ever be). Another thing that should be changed is that the carousel element in the `item-page` must have a dynamic height. At the moment any overflowing data will be hidden since the height can’t be larger than the browser height. A good start would be to make it relative instead of fixed.
 
-Some more data validation wouldn't hurt either. Finally, it would be nice if the scroll-position is kept intact when navigating between the 'page components'.
+Some more data validation wouldn't hurt either (for example the routing). Finally, it would be nice if the scroll-position is kept intact when navigating between the 'page components'.
 
 ## Usage
 1. `git clone`
