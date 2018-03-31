@@ -46,7 +46,7 @@
 
     <list [data]="data" infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="50" (scrolled)="onScroll()"></list>
 
-    <mat-progress-bar *ngIf="moviesService.isLoading" mode="buffer"></mat-progress-bar>
+    <mat-progress-bar *ngIf="isLoading" mode="buffer"></mat-progress-bar>
 
 </div>
 

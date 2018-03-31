@@ -40,7 +40,7 @@ export class MainPageComponent {
 
     this.changeBackgroundImage(this.movieItemService.currentGenre.id);
 
-    //this.moviesService.isLoading.subscribe(data => this.isLoading = data);
+    this.moviesService.isLoading.subscribe(data => this.isLoading = data);
     this.moviesService.isError.subscribe(data => this.isError = data);
     this.moviesService.movies.subscribe(data => this.data = data);
 

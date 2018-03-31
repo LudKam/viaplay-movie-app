@@ -93,7 +93,7 @@ export class MoviesService {
                 map(data => {
                     var result = this.parseResponse(data);             
                     this.lastPage = data.pageCount;
-                    this.isLoading = false;
+                    this.isLoadingSource.next(false);
                     this.nextPage++;
                     return result;
                 }),
